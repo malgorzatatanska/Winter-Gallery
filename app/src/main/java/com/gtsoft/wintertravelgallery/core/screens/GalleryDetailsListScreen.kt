@@ -5,6 +5,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -52,7 +53,11 @@ fun GalleryDetailsListScreen(
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
-        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        modifier = modifier
+            .nestedScroll(
+                scrollBehavior
+                    .nestedScrollConnection
+            ),
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -94,17 +99,26 @@ fun GalleryDetailsListScreen(
         }
 
     ) { innerPadding ->
-        LazyVerticalGrid(
-            contentPadding = innerPadding,
-            columns = GridCells.Fixed(2),
-            horizontalArrangement = Arrangement.spacedBy(5.dp),
-            verticalArrangement = Arrangement.spacedBy(5.dp),
-            modifier = Modifier.padding(10.dp)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(BgGallery)
+                .padding(innerPadding)
         ) {
-            items(Destination.valueOf(name).imageUrls) { url ->
-                GalleryDetailsItem(url)
-            }
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .background(BgGallery)
+                    .fillMaxSize()
+            ) {
+                items(Destination.valueOf(name).imageUrls) { url ->
+                    GalleryDetailsItem(url)
+                }
 
+            }
         }
 
     }

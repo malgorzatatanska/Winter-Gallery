@@ -16,11 +16,19 @@ val TextPrimary = Color(0xFF001221)
 val BgGallery = Color(0XFFFFFFFF)
 
 val OutlineBtn = Color(0XFFC9D0D8)
+val Primary = Color(0xFF5799FC)
 
 
 val BgMainGradient = Brush.horizontalGradient(
     colors = listOf(
         Color(0xFFDAEEFF),
         Color(0xFFEDF7FF)
+    )
+)
+
+val BgErrorGradient = Brush.horizontalGradient(
+    colors = listOf(
+        Color(0xFFFFE9EE),
+        Color(0xFFFFFBFC)
     )
 )
