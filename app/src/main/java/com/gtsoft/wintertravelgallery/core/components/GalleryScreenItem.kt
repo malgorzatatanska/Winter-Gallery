@@ -63,9 +63,10 @@ fun GalleryScreenItem(
             )
             Box(
                 modifier = modifier
-                    .background(Color.White)
                     .clip
                         (RoundedCornerShape(50.dp))
+                    .background(Color.White)
+
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.chevron_right),
