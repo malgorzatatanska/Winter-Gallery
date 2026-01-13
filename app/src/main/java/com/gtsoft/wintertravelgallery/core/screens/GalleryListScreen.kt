@@ -18,6 +18,7 @@ import com.gtsoft.wintertravelgallery.core.components.GalleryScreenContent
 import com.gtsoft.wintertravelgallery.core.model.GalleryListScreenViewModel
 import com.gtsoft.wintertravelgallery.ui.theme.BgMain
 import com.gtsoft.wintertravelgallery.ui.theme.TextPrimary
+import com.gtsoft.wintertravelgallery.ui.theme.fontFamily
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,8 +36,9 @@ fun GalleryListScreen(
             MediumTopAppBar(
                 title = {
                     Text(
-                        "Winter Travel Gallery", maxLines = 1, overflow =
-                            TextOverflow.Ellipsis
+                        "Winter Travel Gallery", maxLines = 1,
+                        overflow =
+                            TextOverflow.Ellipsis,
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
