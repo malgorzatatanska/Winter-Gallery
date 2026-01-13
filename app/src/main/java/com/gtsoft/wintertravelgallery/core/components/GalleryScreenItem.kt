@@ -20,7 +20,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.gtsoft.wintertravelgallery.R
 import com.gtsoft.wintertravelgallery.core.model.GalleryItem
 import com.gtsoft.wintertravelgallery.ui.theme.BgGallery
@@ -58,8 +60,11 @@ fun GalleryScreenItem(
 
         ) {
             Text(
-                item.name,
-                color = BgGallery
+                item.title,
+                color = BgGallery,
+                fontSize = 18.sp,
+                lineHeight = 20.sp,
+                letterSpacing = 0.1.sp
             )
             Box(
                 modifier = modifier

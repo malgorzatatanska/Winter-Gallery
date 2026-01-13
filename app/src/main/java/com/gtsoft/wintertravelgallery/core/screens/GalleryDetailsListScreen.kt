@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
@@ -45,32 +46,29 @@ import com.gtsoft.wintertravelgallery.ui.theme.TextPrimary
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GalleryDetailsListScreen(
-    viewModel: GalleryListScreenViewModel, name: String, modifier: Modifier =
-        Modifier
+    viewModel: GalleryListScreenViewModel,
+    name: String,
+    modifier: Modifier = Modifier
 ) {
 
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
-        modifier = modifier
-            .nestedScroll(
-                scrollBehavior
-                    .nestedScrollConnection
-            ),
-        topBar = {
+        modifier = modifier.nestedScroll(
+            scrollBehavior.nestedScrollConnection
+        ), topBar = {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
                         Destination.valueOf(name).title,
                         maxLines = 1,
-                        overflow =
-                            TextOverflow.Ellipsis
+                        overflow = TextOverflow.Ellipsis,
+                        fontWeight = FontWeight.W500
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = BgGallery,
-                    titleContentColor = TextPrimary
+                    containerColor = BgGallery, titleContentColor = TextPrimary
                 ),
                 navigationIcon = {
                     IconButton(onClick = { viewModel.goBack() }) {

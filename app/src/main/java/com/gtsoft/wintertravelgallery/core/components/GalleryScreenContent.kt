@@ -22,28 +22,33 @@ import com.gtsoft.wintertravelgallery.ui.theme.BgMainGradient
 val GallerListItems = listOf<GalleryItem>(
     GalleryItem(
         "ALPS",
+        title = "Alps",
         imageRes = R.drawable.alps
     ),
     GalleryItem(
         "LAPLAND",
+        title = "Lapland",
         imageRes = R.drawable.lapland
     ),
 
     GalleryItem(
         "NORWAY",
+        title = "Norway Fjords",
         imageRes = R.drawable.norway_fjords
     ),
     GalleryItem(
         "ICELAND",
+        title = "Iceland",
         imageRes = R.drawable.iceland
     ),
     GalleryItem(
         "SWISS",
+        title = "Swiss Villages",
         imageRes = R.drawable.swiss_villages
     ),
-
     GalleryItem(
         "CANADA",
+        title = "Canadian Rockies",
         imageRes = R.drawable.canadian_rockies
     )
 
